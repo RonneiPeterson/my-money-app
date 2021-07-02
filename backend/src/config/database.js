@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
 //para evitar warnings
 mongoose.Promise=global.Promise;
 
-module.exports=mongoose.connect('mongodb://localhost/mymoney')
+module.exports=mongoose.connect('mongodb://localhost/mymoney', { useNewUrlParser: true })
 
 mongoose.connection.on('connected', function () {
   console.log('Connected to Database');
